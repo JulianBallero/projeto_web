@@ -15,16 +15,19 @@ window.onload = async function() {
                 <div class"descrip_text">${conteudo[i].prod_description}</div>
                 <div class="card_price">${conteudo[i].prod_price}</div>
             </div>
-            <div class="card_action" onclick="comprar(${conteudo[i].id})">COMPRAR!</div>
+            <div class="card_action" onclick="comprar(${conteudo[i].product_id})">COMPRAR!</div>
         </div>`;
     
         document.getElementById('produtos').innerHTML += template;
+        
     }}
 
-function comprar(id) {
+
+async function comprar(id) {
+    console.log(id);
 
     var dados = new FormData();
-    dados.append("id_product", id);
+    dados.append("product_id", id);
 
     fetch("php/comprar.php", {
         method: "POST",

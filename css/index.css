@@ -38,6 +38,7 @@ header{
     align-content: center;
     font-size: 3rem;
     display: flex;
+    
 }
 
 .card_product{
@@ -98,7 +99,7 @@ header{
 
 /* ----------------------------------------------- */
 /* Menu */
-
+/* 
 .menu{
 
 background: red;
@@ -117,4 +118,4 @@ to{
 from{
 
 }
-}
+} */
