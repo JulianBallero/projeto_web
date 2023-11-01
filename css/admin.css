@@ -83,7 +83,7 @@ header{
     text-align: center;
 }
 
-.descrip_text, .card_price{
+.descrip_text, .remove{
     width: 100%;
     height: 40%;
     display: flex;

@@ -10,26 +10,32 @@ window.onload = async function() {
 
         var template = 
         `<div class="card_product">
-            <div class="card_name"> <img src="img/id_${conteudo[i].product_id}.jpeg"  height="120px" width="120px"> </div>
+            <div class="card_name"> <h3>${conteudo[i].prod_name}</h3> </div>
             <div class="card_descrip">
                 <div class"descrip_text">${conteudo[i].prod_description}</div>
                 <div class="card_price">${conteudo[i].prod_price}</div>
             </div>
-            <div class="card_action" onclick="comprar(${conteudo[i].product_id})">COMPRAR!</div>
+            <div class="remove" onclick="remove(${conteudo[i].prod_price})>remover produto</div>
         </div>`;
     
         document.getElementById('produtos').innerHTML += template;
         
     }}
 
+function remove() {
+        var dados = new FormData();
+        dados.append("product_id", product_id);
+        fetch("php/remover.php", {
+            method: "POST",
+            body: dados
+        });
+    }
 
-async function comprar(id) {
-    console.log(id);
-
+function add() {
     var dados = new FormData();
-    dados.append("product_id", id);
+    dados.append("product_id", add);
 
-    fetch("php/comprar.php", {
+    fetch("php/adicionar.php", {
         method: "POST",
         body: dados
     });

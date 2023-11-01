@@ -1,6 +1,6 @@
 window.onload = async function() {
     
-    var promise = await fetch("php/obter.php",{
+    var promise = await fetch("php/obtercart.php",{
         method: "GET"
     })
 
@@ -9,13 +9,13 @@ window.onload = async function() {
     for(var i = 0; i < conteudo.length; i++) {
 
         var template = 
-        `<div class="card_product">
-            <div class="card_name"> <img src="img/id_${conteudo[i].product_id}.jpeg"  height="120px" width="120px"> </div>
+        `<div class="card_cart">
+            <div class="card_name"> <img src="img/id_${conteudo[i].prod_id}.jpeg"  height="120px" width="120px"> </div>
             <div class="card_descrip">
                 <div class"descrip_text">${conteudo[i].prod_description}</div>
                 <div class="card_price">${conteudo[i].prod_price}</div>
             </div>
-            <div class="card_action" onclick="comprar(${conteudo[i].product_id})">COMPRAR!</div>
+           
         </div>`;
     
         document.getElementById('produtos').innerHTML += template;
