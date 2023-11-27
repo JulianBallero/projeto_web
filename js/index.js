@@ -10,12 +10,8 @@ window.onload = async function() {
 
         var template = 
         `<div class="card_product">
-            <div class="card_name"> <img src="img/id_${conteudo[i].product_id}.jpeg"  height="120px" width="120px"> </div>
-            <div class="card_descrip">
-                <div class"descrip_text">${conteudo[i].prod_description}</div>
-                <div class="card_price">${conteudo[i].prod_price}</div>
-            </div>
-            <div class="card_action" onclick="comprar(${conteudo[i].product_id})">COMPRAR!</div>
+            <div class="card_price">${conteudo[i].prod_price}</div>
+            <div class="card_name"> <img src="img/id_${conteudo[i].product_id}.jpeg"  height="200px" width="200px"> </div>
         </div>`;
     
         document.getElementById('produtos').innerHTML += template;
@@ -23,7 +19,7 @@ window.onload = async function() {
     }}
 
 
-async function comprar(id) {
+async function adicionar() {
     console.log(id);
 
     var dados = new FormData();

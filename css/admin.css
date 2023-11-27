@@ -30,7 +30,7 @@ header{
     width: 150px;
     color: #ffffff;
     border: 5px double #290000; /* add this line */
-    border-radius: 10px; /* add this line */
+    border-radius: 100px; /* add this line */
     font-size: 20px; /* add this line */
   }
 
@@ -53,6 +53,14 @@ header{
     display: flex;
     
 }
+
+.form{
+    height: 100%;
+    width: 50%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;}
 
 .card_product{
     width: 300px;

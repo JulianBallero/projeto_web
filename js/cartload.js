@@ -1,6 +1,6 @@
 window.onload = async function() {
     
-    var promise = await fetch("php/obtercart.php",{
+    var promise = await fetch("../php/cart.php",{
         method: "GET"
     })
 
@@ -8,29 +8,25 @@ window.onload = async function() {
 
     for(var i = 0; i < conteudo.length; i++) {
 
-        var template = 
-        `<div class="card_cart">
-            <div class="card_name"> <img src="img/id_${conteudo[i].prod_id}.jpeg"  height="120px" width="120px"> </div>
-            <div class="card_descrip">
-                <div class"descrip_text">${conteudo[i].prod_description}</div>
-                <div class="card_price">${conteudo[i].prod_price}</div>
-            </div>
-           
-        </div>`;
+        var template =
+        `<div class="card_produtos">
+            <h4>id do produto:</h4>
+            <h4>${conteudo[i].product_id}</h4>
+            <br>
+            <h4>nome do produto:</h4>
+            <h4>${conteudo[i].prod_name}</h4>
+            <br>
+            <h4>descrição do produto:</h4>
+            <h4">${conteudo[i].prod_description}</h4>
+            <br>
+            <h4>preço do produto:</h4>
+            <h4">${conteudo[i].prod_price}</h4>
+            <br>
+            <h4>status do produto:</h4>
+            <h4">${conteudo[i].prod_status}</h4>
+            <br>  
+        </div>
+        `;
     
-        document.getElementById('produtos').innerHTML += template;
-        
+        document.getElementById('garfield').innerHTML += template;    
     }}
-
-
-async function comprar(id) {
-    console.log(id);
-
-    var dados = new FormData();
-    dados.append("product_id", id);
-
-    fetch("php/comprar.php", {
-        method: "POST",
-        body: dados
-    });
-}
